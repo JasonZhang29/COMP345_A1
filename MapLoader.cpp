@@ -8,7 +8,7 @@ using namespace std;
 
 Map * MapLoader::readMap(string mapFile) {
 		try {
-			Map map;
+			Map* map=new Map();
 			ifstream file(mapFile);
 			vector <string> continentsList;
 			vector<string> territoryList;
@@ -24,8 +24,8 @@ Map * MapLoader::readMap(string mapFile) {
                 }
                 continentsList.push_back(LSplit[0]);
                 int* bonus = new int(stoi(LSplit[1]));
-                cout<<*bonus<<endl;
-                map.addContinent(new Continent(LSplit[0], bonus));
+                Continent* c=new Continent(LSplit[0], bonus);
+                map->addContinent(c);
 			}
 			//moving to Territory
 			while (getline(file, str) && str != "[countries]") {}
@@ -38,7 +38,7 @@ Map * MapLoader::readMap(string mapFile) {
 				}
 				territoryList.push_back(LSplit[1]);
 				int continentIndex = stoi(LSplit[2]) - 1;
-				map.addTerritory(new Territory(LSplit[1], map.getContinents()[continentIndex]));
+				map->addTerritory(new Territory(LSplit[1], map->getContinents()[continentIndex], nullptr));
 			}
 
 			//moving to Borders
@@ -51,16 +51,16 @@ Map * MapLoader::readMap(string mapFile) {
 					LSplit.push_back(w);
 				}
 				for (int i = 1; i < LSplit.size(); i++) {
-					map.getTerritories()[stoi(LSplit[0]) - 1]->addNeighbour(map.getTerritories()[stoi(LSplit[i]) - 1]);
+					map->getTerritories()[stoi(LSplit[0]) - 1]->addNeighbour(map->getTerritories()[stoi(LSplit[i]) - 1]);
 				}
 			}
-			if (map.validate()) {
-			    map.print();
-				return &map;
+			if (map->validate()) {
+			    map->print();
+				return map;
 			}
 			else {
 				cerr << "This map is invalid!" << endl;
-				return 0;
+				exit(0);
 			}
 		}
 		catch (...) {
