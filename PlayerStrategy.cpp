@@ -448,44 +448,12 @@ void BenevolentPlayerStrategy::toDefend(int i) {
                 player->getOrders().push_back(new Deploy(player, player->getTerritories()[weakestTerritoryIndex], *player->getArmies()));
             }
 
-            //cout << "Your territories:" << endl;
-            /*for (int i = 0; i < player->getTerritories().size(); i++) {
-                cout << i + 1 << ". " << player->getTerritories()[i]->getName() << endl;
-            }
-            cout << "You have " << *player->getArmies() << " spare armies left." << endl;
-            bool validFlag = false;
-            int indexTerritory;*/
-            //cout << "Please enter the index of territory you would like to defend:" << endl;
-           /* while (!validFlag) {
-                cin >> indexTerritory;
-                if (indexTerritory > player->getTerritories().size() || indexTerritory < 1) {
-                    cout << "Please enter a valid number!" << endl;
-                } else {
-                    validFlag = true;
-                }
-            }*/
-
-            //int numOfArmies = 0;
-            //cout << "Please enter the number of armies you would like to use:" << endl;
-            /*validFlag = false;
-            while (!validFlag) {
-                cin >> numOfArmies;
-                if (numOfArmies > *player->getArmies() || numOfArmies < 0) {
-                    cout << "Please enter a valid number!" << endl;
-                } else {
-                    player->getOrders().push_back(new Deploy(player, player->getTerritories()[indexTerritory - 1], numOfArmies));
-                    validFlag = true;
-                }
-            }*/
+          
         }
         break;
 
         //advance armies to defend territories
     case 2:
-        /*int choice = 0;
-        cout << "Would you like to defend a territory?" << endl;
-        cout << "1. Yes" << endl;
-        cout << "2. No" << endl;*/
 
         bool keepMovingArmies = true;
 
@@ -521,59 +489,7 @@ void BenevolentPlayerStrategy::toDefend(int i) {
                 keepMovingArmies = false; //if all the territories have around the same number of armies, stop moving armies
             }
 
-            //cin >> choice;
-            //if (choice == 1) {
-            //    //choose a source territory
-            //    cout << "Please choose a source territory:" << endl;
-            //    Territory* source = NULL;
-            //    for (int i = 0; i < player->getTerritories().size(); i++) {
-            //        cout << i + 1 << ". " << player->getTerritories()[i]->getName() << endl;
-            //    }
-            //    int choice1 = 0;
-            //    while (choice1 < 1 || choice1 > player->getTerritories().size()) {
-            //        cin >> choice1;
-            //        if (choice1 < 1 || choice1 > player->getTerritories().size()) {
-            //            cout << "Please enter a valid number!" << endl;
-            //        }
-            //        else {
-            //            source = player->getTerritories()[choice1 - 1];
-            //        }
-            //    }
-            //    //choose a target territory
-            //    cout << "Please choose a target territory:" << endl;
-            //    Territory* target = NULL;
-            //    vector<Territory*> friends = source->getFriendlyNeighbours();
-            //    for (int i = 0; i < friends.size(); i++) {
-            //        cout << i + 1 << ". " << friends[i]->getName() << endl;
-            //    }
-            //    int choice2 = 0;
-            //    while (choice2 < 1 || choice2 > friends.size()) {
-            //        cin >> choice;
-            //        if (choice2 < 1 || choice2 > friends.size()) {
-            //            cout << "Please enter a valid number!" << endl;
-            //        }
-            //        else {
-            //            target = friends[choice2 - 1];
-            //        }
-            //    }
-            //    //choose the number of armies to advance
-            //    int numOfArmies = -1;
-            //    while (numOfArmies < 0 || numOfArmies > * source->getNumberOfArmies()) {
-            //        cout << "You have " << *source->getNumberOfArmies() << " armies in the source country." << endl;
-            //        cout << "Please enter the number of armies you would like to transfer:" << endl;
-            //        cin >> numOfArmies;
-            //        if (numOfArmies < 0 || numOfArmies > * source->getNumberOfArmies()) {
-            //            cout << "Please enter a valid number!" << endl;
-            //        }
-            //    }
-            //    player->getOrders().push_back(new Advance(player, source, target, numOfArmies));
-            //}
-            //else if (choice == 2) {
-            //    cout << "Got it!" << endl;
-            //}
-            //else {
-            //    cout << "Please enter a valid number!" << endl;
-            //}
+            
         }
         break;
     }
