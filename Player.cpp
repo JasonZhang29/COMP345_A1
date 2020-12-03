@@ -251,3 +251,5 @@ void Player::toDefend(int i) {
 void Player::issueOrder() {
     strategy->issueOrder();
 }
+
+

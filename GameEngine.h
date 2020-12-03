@@ -11,6 +11,7 @@
 #include "Cards.h"
 #include "Orders.h"
 #include "GameObservers.h"
+#include "PlayerStrategy.h"
 using namespace std;
 
 class Subject {

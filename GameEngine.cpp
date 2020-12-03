@@ -46,7 +46,7 @@ GameEngine::GameEngine()
                 cout<<"Please enter a valid number!"<<endl;
             }
         }
-        string mapFileName = "/Users/yunwei/Desktop/Warzone/Map/" + mapName[mapId-1] + ".map";
+        string mapFileName = "./" + mapName[mapId - 1] + ".map";
         // use Maploader to load selected map
         gameMap = ml->readMap(mapFileName);
     }
@@ -96,11 +96,11 @@ GameEngine::GameEngine()
         }
         switch(strategy){
             case 1:
-                players[i]->setStrategy(new HumanPlayerStrategy(this,players[i]));
+                //players[i]->setStrategy(new HumanPlayerStrategy(this,players[i]));
                 break;
 
             case 2:
-                players[i]->setStrategy(new AggressivePlayerStrategy(this,players[i]));
+                //players[i]->setStrategy(new AggressivePlayerStrategy(this,players[i]));
                 break;
 
             case 3:
@@ -108,7 +108,7 @@ GameEngine::GameEngine()
                 break;
 
             case 4:
-                players[i]->setStrategy(new NeutralPlayerStrategy(this,players[i]));
+                //players[i]->setStrategy(new NeutralPlayerStrategy(this,players[i]));
                 break;
         }
     }

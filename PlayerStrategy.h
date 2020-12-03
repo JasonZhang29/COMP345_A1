@@ -20,25 +20,25 @@ public:
     virtual void toDefend(int i) = 0;
 };
 
-class HumanPlayerStrategy:public PlayerStrategy{
-public:
-    HumanPlayerStrategy();
-    HumanPlayerStrategy(GameEngine* game, Player* player);
-    ~HumanPlayerStrategy();
-    void issueOrder();
-    void toAttack();
-    void toDefend(int i);
-};
+//class HumanPlayerStrategy:public PlayerStrategy{
+//public:
+//    HumanPlayerStrategy();
+//    HumanPlayerStrategy(GameEngine* game, Player* player);
+//    ~HumanPlayerStrategy();
+//    void issueOrder();
+//    void toAttack();
+//    void toDefend(int i);
+//};
 
-class AggressivePlayerStrategy:public PlayerStrategy{
-public:
-    AggressivePlayerStrategy();
-    AggressivePlayerStrategy(GameEngine* game, Player* player);
-    ~AggressivePlayerStrategy();
-    void issueOrder();
-    void toAttack();
-    void toDefend(int i);
-};
+//class AggressivePlayerStrategy:public PlayerStrategy{
+//public:
+//    AggressivePlayerStrategy();
+//    AggressivePlayerStrategy(GameEngine* game, Player* player);
+//    ~AggressivePlayerStrategy();
+//    void issueOrder();
+//    void toAttack();
+//    void toDefend(int i);
+//};
 
 class BenevolentPlayerStrategy:public PlayerStrategy{
 public:
