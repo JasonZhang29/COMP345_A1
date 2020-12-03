@@ -414,10 +414,6 @@ void NeutralPlayerStrategy::toDefend(int i) {
 
 
 
-void BenevolentPlayerStrategy::issueOrder(){
-
-}
-
 void BenevolentPlayerStrategy::toAttack() {
     cout << "Benevolent player doesn't attack" << endl;
 
@@ -583,3 +579,7 @@ void BenevolentPlayerStrategy::toDefend(int i) {
     }
 }
 
+void BenevolentPlayerStrategy::issueOrder() {
+    player->toDefend(1);
+    player->toDefend(2);
+}
