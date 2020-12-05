@@ -6,8 +6,8 @@ using namespace std;
 
 class MapLoader {
 public:
-    MapLoader();
-    ~MapLoader();
+	MapLoader();
+	~MapLoader();
 	Map* readMap(string mapFile);
 };
 
@@ -39,8 +39,7 @@ class ConquestFileReaderAdapter : public MapLoader {
 private:
 	ConquestFileReader con;
 public:
-	ConquestFileReaderAdapter(ConquestFileReader cfreader) {
-	};	
+	ConquestFileReaderAdapter(ConquestFileReader cfreader);
 };
 
 #endif //MapLoader_H
